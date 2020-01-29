@@ -1,0 +1,13 @@
+.box{
+    margin: 15px;
+    border-style: hidden;
+    padding: 10px;
+}
+.inputStyle{
+    width: 290px;
+    height: 40px;
+}
+.graphbox{
+    padding: 20px;
+    border-style: inset;
+}

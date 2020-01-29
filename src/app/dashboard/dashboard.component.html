@@ -1,0 +1,50 @@
+
+    <div class="row">
+      <div class="col-md-3">
+          <div class="box">
+            <span>
+                Company
+            </span><br/>
+            <select class="inputStyle" (change)= 'changeCompany($event.target.value)'>
+                <option *ngFor= "let opt of companies" value={{opt.cid}}>{{opt.cmp}}</option>
+            </select>
+          </div>
+          <div class="box">
+            <span>
+                Date from
+            </span>
+            <div class="form-group ">
+                <input 
+                bsDatepicker
+           placeholder="Datepicker"
+           
+           class="form-control"
+           [bsValue]="fromValue"
+           [minDate]="fromMinDate"
+           [maxDate]="fromMaxDate"
+           [outsideClick]="true"
+           [outsideEsc]="true"
+           (bsValueChange)="changedFromDateValue($event)"
+           >
+            </div>
+          </div>
+          <div class="box">
+            <span>
+                Date to
+            </span>
+            <div class="form-group ">
+                <input type="text"
+           placeholder="Datepicker"
+           class="form-control"
+           [bsValue]="toValue"
+           [minDate]="toMinDate"
+           [maxDate]="toMaxDate"
+           (bsValueChange)="changedtoDateValue($event)"
+           bsDatepicker>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-9 graphbox">
+        <google-chart [type]=charttype [data]="chart" [width]="1000"></google-chart>
+      </div>
+  </div>
